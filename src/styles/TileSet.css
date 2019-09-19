@@ -1,0 +1,10 @@
+.tileset {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.cardtile {
+  min-width: 30vw;
+  height: 10vh;
+}

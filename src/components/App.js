@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../public/logo.svg';
+import '../styles/App.css';
+import TileSet from './TileSet/TileSet';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         >
           Learn React
         </a>
+        <TileSet />
       </header>
     </div>
   );
