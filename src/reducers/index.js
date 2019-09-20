@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import score from './scoreReducer';
 
 const rootReducer = combineReducers({
-  routing: routerReducer,
+  score: score,
 })
 
 export default rootReducer;

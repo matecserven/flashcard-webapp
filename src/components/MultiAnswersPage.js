@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TileSet from '../components/TileSet/TileSet';
+import TileSetCont from '../containers/Score/TileSetCont';
 import { randomMulti } from '../utils/randomizer';
 
 const MultiAnswersPage = (props) => {
@@ -11,7 +11,7 @@ const MultiAnswersPage = (props) => {
 
   return (
     <div>
-      <TileSet current={current} />
+      <TileSetCont current={current} />
       <button onClick={handleClick}>Next question</button>
       <button onClick={() => props.history.push('/')}>Go back</button>
       <button onClick={() => props.history.push('/results')}>Results</button>

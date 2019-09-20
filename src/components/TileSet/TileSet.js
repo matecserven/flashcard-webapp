@@ -1,14 +1,18 @@
 import React from 'react';
 import CardTile from './CardTile';
 import AnswerTile from './AnswerTile';
-import '../../styles/TileSet.css';
 import jsonData from '../../assets/javaCardsMulti.json';
+import '../../stylesheets/TileSet.css';
 
 const TileSet = (props) => {
   const handleClick = (e) => {
-    (jsonData[props.current].correct === e.target.value)
-      ? alert('You are amazing!')
-      : alert(`Nope correct answer: ${jsonData[props.current].correct.toUpperCase()}`);
+    if (jsonData[props.current].correct === e.target.value) {
+      alert('You are amazing!');
+      props.updateCorrect();
+    } else {
+      alert(`Nope correct answer: ${jsonData[props.current].correct.toUpperCase()}`);
+      props.updateInCorrect();
+    }
   }
 
   const answerOptions = Object.entries(jsonData[props.current].answer).map((entry) => <AnswerTile key={entry[0]} answer={entry} />)
@@ -21,6 +25,7 @@ const TileSet = (props) => {
       </div>
     </div>
   );
+
 }
 
 export default TileSet;
