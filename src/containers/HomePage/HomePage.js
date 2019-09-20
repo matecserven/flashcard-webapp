@@ -6,11 +6,11 @@ const HomePage = (props) => {
   }
 
   return (
-    <div className="homePage">
+    <div className='homePage'>
       <h1>Welcome to the Flash Card App</h1>
       <p>Please choose question type</p>
-      <button onClick={handleRedirect} value="regular">Regular</button>
-      <button onClick={handleRedirect} value="multi">Multi answer</button>
+      <button onClick={handleRedirect} value='regular'>Regular</button>
+      <button onClick={handleRedirect} value='multi'>Multi answer</button>
     </div>
   )
 };

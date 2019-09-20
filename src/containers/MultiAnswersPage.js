@@ -4,7 +4,6 @@ import { randomMulti } from '../utils/randomizer';
 
 const MultiAnswersPage = (props) => {
   const [current, setCurrent] = useState(1);
-  console.log(current);
 
   const handleClick = () => {
     setCurrent(randomMulti(current));
@@ -15,6 +14,7 @@ const MultiAnswersPage = (props) => {
       <TileSet current={current} />
       <button onClick={handleClick}>Next question</button>
       <button onClick={() => props.history.push('/')}>Go back</button>
+      <button onClick={() => props.history.push('/results')}>Results</button>
     </div>
   );
 }
