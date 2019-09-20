@@ -2,9 +2,23 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  flex-direction: column;
 }
 
 .cardtile {
   min-width: 30vw;
-  height: 10vh;
+  height: 20vh;
+}
+
+.answers {
+  display: flex;
+  min-width: 30vw;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+
+.answerTile {
+  width: 40%;
+  height: 70px;
+  margin-bottom: 10px;
 }

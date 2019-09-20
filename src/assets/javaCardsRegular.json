@@ -1,0 +1,10 @@
+{
+  "1": {
+    "q": "What is important for the Java source file names, in relation to class names?",
+    "a": "The source file name must match the public class name in the program"
+  },
+  "2": {
+    "q": "What are the three categories of errors?",
+    "a": "Syntax errors, runtime errors, and logic errors"
+  }
+}

@@ -1,29 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CardTile from './CardTile';
+import AnswerTile from './AnswerTile';
 import '../../styles/TileSet.css';
+import jsonData from '../../assets/javaCardsMulti.json';
 
-
-// eslint-disable-next-line react/prefer-stateless-function
-class TileSet extends Component {
-  state = {
-    counter: 0,
-  };
-
-  handleClick = () => {
-    this.setState((state) => ({
-      counter: state.counter + 1,
-    }));
-    console.log(this.state.counter);
+const TileSet = (props) => {
+  const handleClick = (e) => {
+    (jsonData[props.current].correct === e.target.value)
+    ? alert('You are amazing!')
+      : alert(`Nope correct answer: ${jsonData[props.current].correct.toUpperCase()}`);
   }
 
-  render() {
-    const { counter } = this.state;
-    return (
-      <div className="tileset" onClick={this.handleClick}>
-        <CardTile className="cardtile-main" counter={counter} />
+  const answerOptions = Object.entries(jsonData[props.current].answer).map((entry) => <AnswerTile key={entry[0]} answer={entry} />)
+
+  return (
+    <div className="tileset">
+      <CardTile current={jsonData[props.current]} />
+      <div className="answers" onClick={handleClick}>
+        {answerOptions}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default TileSet;
