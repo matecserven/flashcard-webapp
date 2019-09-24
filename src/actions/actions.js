@@ -5,3 +5,13 @@ export const updateCorrect = () => ({
 export const updateInCorrect = () => ({
   type: 'UPDATE_INCORRECT',
 });
+
+export const updateChosenAnswer = (payload) => ({
+  type: 'UPDATE_CHOSEN_ANSWER',
+  payload
+});
+
+export const updateCurrentQuestion = (payload) => ({
+  type: 'UPDATE_CURRENT_QUESTION',
+  payload
+});

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CardTile = (props) => (
-  <div className='cardtile'>
-    <h2>{props.current.question}</h2>
+const CardTile = ({ question }) => (
+  <div className='cardtile box'>
+    <h2>{question}</h2>
   </div>
 );
 

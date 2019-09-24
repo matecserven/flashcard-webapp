@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TileSetCont from '../containers/Score/TileSetCont';
+import ResultCont from '../containers/Score/ResultCont';
 import { randomMulti } from '../utils/randomizer';
 
 const MultiAnswersPage = (props) => {
-  const [current, setCurrent] = useState(1);
-
   const handleClick = () => {
-    setCurrent(randomMulti(current));
+    props.updateCurrentQuestion((randomMulti(props.currentQuestion)));
+    props.updateChosenAnswer('');
   }
 
   return (
-    <div>
-      <TileSetCont current={current} />
-      <button onClick={handleClick}>Next question</button>
-      <button onClick={() => props.history.push('/')}>Go back</button>
-      <button onClick={() => props.history.push('/results')}>Results</button>
+    <div className='homePage'>
+      <ResultCont />
+      <TileSetCont current={props.currentQuestion} />
+      <div>
+        <button className='button is-primary' onClick={handleClick}>Next question</button>
+        <button className='button is-primary' onClick={() => props.history.push('/')}>Go back</button>
+      </div>
     </div>
   );
 }

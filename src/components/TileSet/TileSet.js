@@ -5,21 +5,31 @@ import jsonData from '../../assets/javaCardsMulti.json';
 import '../../stylesheets/TileSet.css';
 
 const TileSet = (props) => {
+  const { question, correct, answer } = jsonData[props.current];
+
   const handleClick = (e) => {
-    if (jsonData[props.current].correct === e.target.value) {
-      alert('You are amazing!');
+    props.updateChosenAnswer(e.target.value);
+    if (correct === e.target.value) {
       props.updateCorrect();
     } else {
-      alert(`Nope correct answer: ${jsonData[props.current].correct.toUpperCase()}`);
       props.updateInCorrect();
     }
   }
 
-  const answerOptions = Object.entries(jsonData[props.current].answer).map((entry) => <AnswerTile key={entry[0]} answer={entry} />)
+  const answerOptions = Object.entries(answer)
+    .map((entry) => {
+      if (entry[0].match(correct) && props.chosenAnswer) {
+        return <AnswerTile key={entry[0]} answer={entry} color={'#4CAF50'} />
+      }
+      if (!props.chosenAnswer.match(correct) && props.chosenAnswer.match(entry[0])) {
+        return <AnswerTile key={entry[0]} answer={entry} color={'#f44336'} />
+      }
+      return <AnswerTile key={entry[0]} answer={entry} />
+    });
 
   return (
     <div className='tileset'>
-      <CardTile current={jsonData[props.current]} />
+      <CardTile question={question} />
       <div className='answers' onClick={handleClick}>
         {answerOptions}
       </div>
