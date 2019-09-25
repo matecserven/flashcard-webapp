@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import '../stylesheets/App.scss';
 import HomePage from './HomePage/HomePage';
-import MultiAnswersPageCont from '../containers/MultiAnswersPageCont';
+import MultiTileSetCont from '../containers/MultiTileSetCont';
+import '../stylesheets/App.scss';
 
 const App = () => {
   useEffect(() => {
@@ -13,7 +13,8 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route exact path='/multi' component={MultiAnswersPageCont} />
+        <Route exact path='/multi' component={MultiTileSetCont} />
+        <Route exact path='/regular' />
       </Switch>
     </Router>
   )

@@ -1,10 +1,10 @@
 import React from 'react';
 import Score from '../Results/Score';
 
-const ResultPage = (props) => (
+const ResultPage = ({ correct, incorrect }) => (
   <div>
-    <Score type={'Correct'} score={props.correct} />
-    <Score type={'Incorrect'} score={props.incorrect} />
+    <Score type={'Correct'} score={correct} />
+    <Score type={'Incorrect'} score={incorrect} />
   </div>
 )
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Score = (props) => (
+const Score = ({ type, score }) => (
   <div>
-    {props.type}: {props.score}
+    {type}: {score}
   </div>
 );
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import MultiAnswersPage from '../components/MultiAnswersPage';
+import MultiTileSet from '../components/MultiTileSet';
 import { updateCurrentQuestion, updateChosenAnswer } from '../actions/actions';
 
 const mapStateToProps = (store) => {
@@ -14,9 +14,9 @@ const mapDispatchToProps = {
   updateChosenAnswer,
 };
 
-const MultiAnswersPageCont = connect(
+const MultiTileSetCont = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(MultiAnswersPage);
+)(MultiTileSet);
 
-export default MultiAnswersPageCont;
+export default MultiTileSetCont;
