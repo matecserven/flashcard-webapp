@@ -18,15 +18,18 @@ const MultiAnswersPage = (props) => {
     }
   }
 
+  const getColorFor = (entry) => {
+    if (entry[0].match(correct) && props.chosenAnswer) {
+      return '#4CAF50';
+    }
+    if (!props.chosenAnswer.match(correct) && props.chosenAnswer.match(entry[0])) {
+      return '#f44336';
+    }
+  }
+
   const answerOptions = Object.entries(answer)
     .map((entry) => {
-      if (entry[0].match(correct) && props.chosenAnswer) {
-        return <AnswerTile key={entry[0]} answer={entry} color={'#4CAF50'} onClick={handleClick} />
-      }
-      if (!props.chosenAnswer.match(correct) && props.chosenAnswer.match(entry[0])) {
-        return <AnswerTile key={entry[0]} answer={entry} color={'#f44336'} onClick={handleClick} />
-      }
-      return <AnswerTile key={entry[0]} answer={entry} onClick={handleClick} />
+      return <AnswerTile key={entry[0]} answer={entry} onClick={handleClick} color={getColorFor(entry)} />
     });
 
   return (

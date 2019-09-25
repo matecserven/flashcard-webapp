@@ -6,10 +6,10 @@ import { randomMulti } from '../utils/randomizer';
 
 const MultiTileSet = (props) => {
   const handleClick = () => {
-    props.updateCurrentQuestion((randomMulti(props.currentQuestion)));
+    props.updateCurrentQuestion((randomMulti(props.currentQuestion, 'multi')));
     props.updateChosenAnswer('');
   }
-
+  console.log('renderke')
   return (
     <div className='homePage'>
       <ResultCont />
