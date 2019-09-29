@@ -9,7 +9,7 @@ const MultiTileSet = (props) => {
     props.updateCurrentQuestion((randomMulti(props.currentQuestion, 'multi')));
     props.updateChosenAnswer('');
   }
-  console.log('renderke')
+
   return (
     <div className='homePage'>
       <ResultCont />
