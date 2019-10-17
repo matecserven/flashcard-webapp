@@ -1,6 +1,6 @@
 import React from 'react';
-import MultiAnswersPageCont from '../containers/Score/MultiAnswersPageCont';
-import ResultCont from '../containers/Score/ResultCont';
+import MultiAnswersPageCont from '../containers/MultiAnswersPageCont';
+import ResultCont from '../containers/ResultCont';
 import FooterNav from './Navigation/FooterNav';
 import { randomMulti } from '../utils/randomizer';
 

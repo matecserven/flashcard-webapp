@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ResultPage from '../../components/ResultPage/ResultPage';
+import ResultPage from '../components/ResultPage/ResultPage';
 
 const mapStateToProps = (store) => {
   const { correct, incorrect } = store.score;

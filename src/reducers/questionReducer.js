@@ -1,4 +1,4 @@
-export default function question(
+export default function questions(
   state = {
     currentQuestion: 1,
   },

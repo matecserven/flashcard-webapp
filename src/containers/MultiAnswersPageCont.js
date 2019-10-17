@@ -3,8 +3,8 @@ import {
   updateCorrect,
   updateInCorrect,
   updateChosenAnswer,
-} from '../../actions/actions';
-import MultiAnswersPage from '../../components/TileSet/MultiAnswersPage';
+} from '../actions/actions';
+import MultiAnswersPage from '../components/TileSet/MultiAnswersPage';
 
 const mapStateToProps = (store) => {
   const { correct, incorrect } = store.score;
