@@ -13,6 +13,9 @@ const HomePage = () => (
         Multi answer
       </Link>
     </div>
+    <Link className='button is-primary' to='/newCard'>
+      Create new card
+    </Link>
   </div>
 );
 
