@@ -3,7 +3,6 @@ import CardTile from './CardTile';
 import AnswerTile from './AnswerTile';
 import jsonData from '../../assets/javaCardsMulti.json';
 import '../../stylesheets/TileSet.css';
-import app from '../Firebase/firebase';
 
 const MultiAnswersPage = (props) => {
   const { question, correct, answer } = jsonData[props.current];
@@ -17,11 +16,6 @@ const MultiAnswersPage = (props) => {
         props.updateInCorrect();
       }
     }
-    const db = app.firestore();
-    db.collection('message').add({
-      text: 'hello',
-      user: 'reactapp',
-    });
   };
 
   const getColorFor = (entry) => {
