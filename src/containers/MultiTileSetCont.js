@@ -3,7 +3,7 @@ import MultiTileSet from '../components/MultiTileSet';
 import { updateCurrentQuestion, updateChosenAnswer } from '../actions/actions';
 
 const mapStateToProps = (store) => {
-  const { currentQuestion } = store.question;
+  const { currentQuestion } = store.questions;
   return {
     currentQuestion,
   };
