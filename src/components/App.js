@@ -7,7 +7,7 @@ import '../stylesheets/App.scss';
 
 const App = () => {
   useEffect(() => {
-    document.title = 'Flash Card App'
+    document.title = 'Flash Card App';
   });
 
   return (
@@ -18,7 +18,7 @@ const App = () => {
         <Route exact path='/regular' component={SingleTileSetCont} />
       </Switch>
     </Router>
-  )
+  );
 };
 
 export default App;

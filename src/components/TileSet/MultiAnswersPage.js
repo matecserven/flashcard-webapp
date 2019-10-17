@@ -3,6 +3,7 @@ import CardTile from './CardTile';
 import AnswerTile from './AnswerTile';
 import jsonData from '../../assets/javaCardsMulti.json';
 import '../../stylesheets/TileSet.css';
+import app from '../Firebase/firebase';
 
 const MultiAnswersPage = (props) => {
   const { question, correct, answer } = jsonData[props.current];
@@ -16,31 +17,42 @@ const MultiAnswersPage = (props) => {
         props.updateInCorrect();
       }
     }
-  }
+    const db = app.firestore();
+    db.collection('message').add({
+      text: 'hello',
+      user: 'reactapp',
+    });
+  };
 
   const getColorFor = (entry) => {
     if (entry[0].match(correct) && props.chosenAnswer) {
       return '#4CAF50';
     }
-    if (!props.chosenAnswer.match(correct) && props.chosenAnswer.match(entry[0])) {
+    if (
+      !props.chosenAnswer.match(correct) &&
+      props.chosenAnswer.match(entry[0])
+    ) {
       return '#f44336';
     }
-  }
+  };
 
-  const answerOptions = Object.entries(answer)
-    .map((entry) => {
-      return <AnswerTile key={entry[0]} answer={entry} onClick={handleClick} color={getColorFor(entry)} />
-    });
+  const answerOptions = Object.entries(answer).map((entry) => {
+    return (
+      <AnswerTile
+        key={entry[0]}
+        answer={entry}
+        onClick={handleClick}
+        color={getColorFor(entry)}
+      />
+    );
+  });
 
   return (
     <div className='MultiAnswersPage'>
       <CardTile question={question} />
-      <div className='answers'>
-        {answerOptions}
-      </div>
+      <div className='answers'>{answerOptions}</div>
     </div>
   );
-
-}
+};
 
 export default MultiAnswersPage;

@@ -1,11 +1,15 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const FooterNav = (props) => (
   <div>
-    <button className='button is-primary' onClick={props.onClick}>Next question</button>
-    <button className='button is-primary' onClick={() => props.history.push('/')}>Go back</button>
+    <button className='button is-primary' onClick={props.onClick}>
+      Next question
+    </button>
+    <Link className='button is-primary' to='/'>
+      Go back
+    </Link>
   </div>
 );
 
-export default withRouter(FooterNav);
+export default FooterNav;

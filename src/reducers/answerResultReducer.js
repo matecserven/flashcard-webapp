@@ -1,13 +1,15 @@
 export default function answerResult(
   state = {
     chosenAnswer: '',
-  }, action) {
+  },
+  action,
+) {
   switch (action.type) {
     case 'UPDATE_CHOSEN_ANSWER': {
       return {
         ...state,
-        chosenAnswer: action.payload
-      }
+        chosenAnswer: action.payload,
+      };
     }
 
     default:

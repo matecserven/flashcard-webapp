@@ -6,9 +6,9 @@ import { randomMulti } from '../utils/randomizer';
 
 const MultiTileSet = (props) => {
   const handleClick = () => {
-    props.updateCurrentQuestion((randomMulti(props.currentQuestion, 'multi')));
+    props.updateCurrentQuestion(randomMulti(props.currentQuestion, 'multi'));
     props.updateChosenAnswer('');
-  }
+  };
 
   return (
     <div className='homePage'>
@@ -17,6 +17,6 @@ const MultiTileSet = (props) => {
       <FooterNav onClick={handleClick} />
     </div>
   );
-}
+};
 
 export default MultiTileSet;

@@ -1,21 +1,25 @@
 import { connect } from 'react-redux';
-import { updateCorrect, updateInCorrect, updateChosenAnswer } from '../../actions/actions';
+import {
+  updateCorrect,
+  updateInCorrect,
+  updateChosenAnswer,
+} from '../../actions/actions';
 import MultiAnswersPage from '../../components/TileSet/MultiAnswersPage';
 
 const mapStateToProps = (store) => {
-  const { correct, incorrect, } = store.score;
+  const { correct, incorrect } = store.score;
   const { chosenAnswer } = store.answerResult;
   return {
     correct,
     incorrect,
-    chosenAnswer
+    chosenAnswer,
   };
 };
 
 const mapDispatchToProps = {
   updateCorrect,
   updateInCorrect,
-  updateChosenAnswer
+  updateChosenAnswer,
 };
 
 const MultiAnswersPageCont = connect(

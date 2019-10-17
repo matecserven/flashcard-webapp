@@ -8,4 +8,4 @@ export const randomMulti = (current, type) => {
     rolled = Math.floor(Math.random() * Object.keys(file).length) + 1;
   }
   return rolled;
-}
+};

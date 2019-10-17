@@ -2,7 +2,9 @@ export default function score(
   state = {
     correct: 0,
     incorrect: 0,
-  }, action) {
+  },
+  action,
+) {
   switch (action.type) {
     case 'UPDATE_CORRECT': {
       return {
