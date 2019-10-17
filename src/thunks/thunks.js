@@ -1,5 +1,7 @@
 import store from '../store/configureStore';
-import { updateCurrentQuestion, updateChosenAnswer } from '../actions/actions';
+import { getCards } from '../actions/actions';
 
-export const updateCurrentQuestionThunk = () =>
-  store.dispatch(updateCurrentQuestion);
+export const getCardsThunk = () => {
+
+  store.dispatch(getCards(data));
+}
