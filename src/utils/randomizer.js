@@ -1,11 +1,9 @@
-import jsonData from '../assets/javaCardsMulti.json';
-import jsonDataSingle from '../assets/javaCardsRegular.json';
+import { sample } from 'lodash';
 
-export const randomMulti = (current, type) => {
+export const randomCard = (current, data) => {
   let rolled = current;
-  const file = type.match('multi') ? jsonData : jsonDataSingle;
   while (rolled === current) {
-    rolled = Math.floor(Math.random() * Object.keys(file).length) + 1;
+    rolled = sample(data);
   }
   return rolled;
 };

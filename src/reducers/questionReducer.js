@@ -1,7 +1,7 @@
 export default function questions(
   state = {
     cards: {},
-    currentQuestion: 1,
+    currentQuestion: null,
   },
   action,
 ) {

@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import MultiTileSet from '../components/MultiTileSet';
 import { updateCurrentQuestion, updateChosenAnswer } from '../actions/actions';
+import { withFirebase } from '../components/Firebase';
 
 const mapStateToProps = (store) => {
-  const { currentQuestion } = store.questions;
+  const { currentQuestion, cards } = store.questions;
   return {
+    cards,
     currentQuestion,
   };
 };
@@ -19,4 +21,4 @@ const MultiTileSetCont = connect(
   mapDispatchToProps,
 )(MultiTileSet);
 
-export default MultiTileSetCont;
+export default withFirebase(MultiTileSetCont);
