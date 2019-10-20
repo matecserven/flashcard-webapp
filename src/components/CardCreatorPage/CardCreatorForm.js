@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import CardAnswer from './CardAnswer';
 import { withFirebase } from '../Firebase';
+import { take } from 'lodash';
 
 const CardCreatorForm = ({ firebase }) => {
   const [question, setQuestion] = useState();
@@ -20,73 +22,33 @@ const CardCreatorForm = ({ firebase }) => {
   const submitForm = (event) => {
     event.preventDefault();
     console.log(question, answers, correct);
-    firebase.addCard().add({
+    firebase.addCard({
       question,
       answers,
       correct,
     });
   };
 
+  const appendAnswers = (amount) => {
+    const letters = ['a', 'b', 'c', 'd'];
+    return take(letters, amount).map((letter) => (
+      <CardAnswer
+        key={letter}
+        letter={letter}
+        correct={correct}
+        handleAnswerChange={handleAnswerChange}
+        handleOptionChange={handleOptionChange}
+      />
+    ));
+  };
+
   return (
-    <form onSubmit={submitForm}>
-      <label>
-        Question:
-        <input type='text' onChange={handleQuestionChange} />
-      </label>
-      <div>
-        <div>
-          <label>
-            Answer 1:
-            <input type='text' name='a' onChange={handleAnswerChange} />
-            <input
-              type='radio'
-              name='correctAnswer'
-              value='a'
-              checked={correct === 'a'}
-              onChange={handleOptionChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Answer 2:
-            <input type='text' name='b' onChange={handleAnswerChange} />
-            <input
-              type='radio'
-              name='correctAnswer'
-              value='b'
-              checked={correct === 'b'}
-              onChange={handleOptionChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Answer 3:
-            <input type='text' name='c' onChange={handleAnswerChange} />
-            <input
-              type='radio'
-              name='correctAnswer'
-              value='c'
-              checked={correct === 'c'}
-              onChange={handleOptionChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Answer 4:
-            <input type='text' name='d' onChange={handleAnswerChange} />
-            <input
-              type='radio'
-              name='correctAnswer'
-              value='d'
-              checked={correct === 'd'}
-              onChange={handleOptionChange}
-            />
-          </label>
-        </div>
+    <form onSubmit={submitForm} className='column'>
+      <div className='field'>
+        <label className='field-label is-size-1'>Question:</label>
+        <input className='input' type='text' onChange={handleQuestionChange} />
       </div>
+      <div>{appendAnswers(4)}</div>
       <input className='button is-primary' type='submit' value='Submit' />
     </form>
   );

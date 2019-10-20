@@ -4,13 +4,15 @@ import ResultCont from '../containers/ResultCont';
 import FooterNav from './Navigation/FooterNav';
 import { getCardsThunk } from '../thunks/thunks';
 import { randomCard } from '../utils/randomizer';
+import { isEmpty } from 'lodash';
+import '../stylesheets/loader.scss';
 
 const MultiTileSet = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       await getCardsThunk(props.firebase);
     };
-    fetchData();
+    isEmpty(props.cards) && fetchData();
   }, []);
 
   const handleClick = () => {
@@ -24,7 +26,15 @@ const MultiTileSet = (props) => {
     <div className='homePage'>
       <ResultCont />
       {!props.currentQuestion ? (
-        <div>Loading...</div>
+        <div>
+          Loading...
+          <div className='lds-ring'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       ) : (
         <MultiAnswersPageCont current={props.currentQuestion} />
       )}

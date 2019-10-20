@@ -4,7 +4,7 @@ import { randomCard } from '../utils/randomizer';
 
 export const getCardsThunk = async (firebase) => {
   return await firebase
-    .getCards()
+    .getCards('Java')
     .get()
     .then((result) => {
       let dataObj = {};

@@ -1,10 +1,38 @@
-{
-  "1": {
-    "q": "What is important for the Java source file names, in relation to class names?",
-    "a": "The source file name must match the public class name in the program"
+[
+  {
+    "question": "What is important for the Java source file names, in relation to class names?",
+    "answer": "The source file name must match the public class name in the program"
   },
-  "2": {
-    "q": "What are the three categories of errors?",
-    "a": "Syntax errors, runtime errors, and logic errors"
+  {
+    "question": "What are the three categories of errors?",
+    "answer": "Syntax errors, runtime errors, and logic errors"
+  },
+  {
+    "question": "What are \"identifiers\"?",
+    "answer": "Identifiers are names for naming elements such as variables, constants, methods, classes, packages in a program"
+  },
+  {
+    "question": "What are the integer types in Java?",
+    "answer": "byte, short, int, and long. Representing different sizes in ascending order"
+  },
+  {
+    "question": "How can you convert a value from one type to another?",
+    "answer": "You can do this explicitly by using the (type)value notation"
+  },
+  {
+    "question": "What is \"char\"?",
+    "answer": "A reserved word, and a type that represents a single character"
+  },
+  {
+    "question": "What does &&, ||, and ! mean in boolean expressions?",
+    "answer": "&& means AND; || means OR; !means NOT"
+  },
+  {
+    "question": "What 3 types of selection statements are there?",
+    "answer": "if-else statements, switch-statements, and conditional expressions"
+  },
+  {
+    "question": "What is the syntax of conditional expressions?",
+    "answer": "boolean-expr ? expr1 : expr2;"
   }
-}
+]
