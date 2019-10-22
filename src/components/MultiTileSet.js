@@ -8,8 +8,8 @@ import '../stylesheets/loader.scss';
 
 const MultiTileSet = (props) => {
   useEffect(() => {
-    const fetchData = async () => {
-      await props.getCardsThunk(props.firebase);
+    const fetchData = () => {
+      props.getCardsThunk(props.firebase);
     };
     isEmpty(props.cards) && fetchData();
   }, []);
