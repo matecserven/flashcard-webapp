@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import MultiAnswersPageCont from '../containers/MultiAnswersPageCont';
 import ResultCont from '../containers/ResultCont';
 import FooterNav from './Navigation/FooterNav';
-import { getCardsThunk } from '../thunks/thunks';
 import { randomCard } from '../utils/randomizer';
 import { isEmpty } from 'lodash';
 import '../stylesheets/loader.scss';
@@ -10,7 +9,7 @@ import '../stylesheets/loader.scss';
 const MultiTileSet = (props) => {
   useEffect(() => {
     const fetchData = async () => {
-      await getCardsThunk(props.firebase);
+      await props.getCardsThunk(props.firebase);
     };
     isEmpty(props.cards) && fetchData();
   }, []);
