@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import FooterNav from '../Navigation/FooterNav';
+import FooterNav from 'components/Navigation/FooterNav';
 import SingleAnswerPage from './SingleAnswerPage';
-import jsonData from '../../assets/javaCardsRegular.json';
-import { randomCard } from '../../utils/randomizer';
+import jsonData from 'assets/javaCardsRegular.json';
+import { randomCard } from 'utils/randomizer';
 
 const SingleTileSet = (props) => {
   const [showAnswer, setShowAnswer] = useState(false);

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import score from './scoreReducer';
-import answerResult from './answerResultReducer';
-import questions from './questionReducer';
+import score from 'reducers/scoreReducer';
+import answerResult from 'reducers/answerResultReducer';
+import questions from 'reducers/questionReducer';
 
 const rootReducer = combineReducers({
   score,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CardAnswer from './CardAnswer';
-import { withFirebase } from '../Firebase';
+import { withFirebase } from 'components/Firebase';
 import { take } from 'lodash';
 
 const CardCreatorForm = ({ firebase }) => {

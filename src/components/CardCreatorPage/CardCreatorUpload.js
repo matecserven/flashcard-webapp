@@ -1,5 +1,5 @@
 import React from 'react';
-import { withFirebase } from '../Firebase';
+import { withFirebase } from 'components/Firebase';
 
 const CardCreatorUpload = ({ firebase }) => {
   const fileInput = React.createRef();

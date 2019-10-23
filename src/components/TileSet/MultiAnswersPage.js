@@ -1,7 +1,7 @@
 import React from 'react';
 import CardTile from './CardTile';
 import AnswerTile from './AnswerTile';
-import '../../stylesheets/TileSet.css';
+import 'stylesheets/TileSet.css';
 
 const MultiAnswersPage = (props) => {
   const { question, correct, answers } = props.cards[props.current];

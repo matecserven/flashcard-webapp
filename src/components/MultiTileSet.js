@@ -1,17 +1,14 @@
 import React, { useEffect } from 'react';
-import MultiAnswersPageCont from '../containers/MultiAnswersPageCont';
-import ResultCont from '../containers/ResultCont';
-import FooterNav from './Navigation/FooterNav';
-import { randomCard } from '../utils/randomizer';
+import MultiAnswersPageCont from 'containers/MultiAnswersPageCont';
+import ResultCont from 'containers/ResultCont';
+import FooterNav from 'components/Navigation/FooterNav';
+import { randomCard } from 'utils/randomizer';
 import { isEmpty } from 'lodash';
-import '../stylesheets/loader.scss';
+import 'stylesheets/loader.scss';
 
 const MultiTileSet = (props) => {
   useEffect(() => {
-    const fetchData = () => {
-      props.getCardsThunk(props.firebase);
-    };
-    isEmpty(props.cards) && fetchData();
+    isEmpty(props.cards) && props.getCardsThunk(props.firebase);
   }, []);
 
   const handleClick = () => {

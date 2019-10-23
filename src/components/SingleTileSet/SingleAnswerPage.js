@@ -1,5 +1,5 @@
 import React from 'react';
-import CardTile from '../TileSet/CardTile';
+import CardTile from 'components/TileSet/CardTile';
 
 const SingleAnswerPage = ({ question, showAnswer, onClick }) => (
   <div onClick={onClick}>
