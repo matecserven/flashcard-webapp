@@ -1,10 +1,10 @@
-export default function questions(
+export default (
   state = {
     cards: {},
     currentQuestion: null,
   },
   action,
-) {
+) => {
   switch (action.type) {
     case 'UPDATE_CURRENT_QUESTION': {
       return {
@@ -23,4 +23,4 @@ export default function questions(
     default:
       return state;
   }
-}
+};

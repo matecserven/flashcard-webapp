@@ -1,0 +1,109 @@
+[
+  {
+    "question": "Analyze the following\n\n code:boolean even = false;\n if (even = true)\n {System.out.println(\"It is even!\");\n}",
+    "answers": {
+      "a": "The program has a compile error.",
+      "b": "The program has a runtime error.",
+      "c": "The program runs, but displays nothing.",
+      "d": "The program runs and displays It is even!"
+    },
+    "correct": "d"
+  },
+  {
+    "question": "Which of the Boolean expressions below is correct?",
+    "answers": {
+      "a": "(true) && (3 => 4)",
+      "b": "!(x > 0) && (x > 0)",
+      "c": "(x != 0) || (x = 0)",
+      "d": "(-10 < x < 0)"
+    },
+    "correct": "b"
+  },
+  {
+    "question": "Suppose x=10 and y=10 what is x after evaluating the expression (y > 10) && (x++ > 10).",
+    "answers": {
+      "a": "9",
+      "b": "10",
+      "c": "11"
+    },
+    "correct": "b"
+  },
+  {
+    "question": "Suppose x=10 and y=10 what is x after evaluating the expression (y >= 10) || (x++ > 10).",
+    "answers": {
+      "a": "9",
+      "b": "10",
+      "c": "11"
+    },
+    "correct": "b"
+  },
+  {
+    "question": "The signature of a method consists of __",
+    "answers": {
+      "a": "method name",
+      "b": "method name and parameter list",
+      "c": "return type, method name, and parameter list",
+      "d": "parameter list"
+    },
+    "correct": "b"
+  },
+  {
+    "question": "Which of the following class definitions defines a legal abstract class?",
+    "answers": {
+      "a": " class A { abstract void unfinished() { } }",
+      "b": "class A { abstract void unfinished(); }",
+      "c": "abstract class A { abstract void unfinished(); }",
+      "d": "public class abstract A { abstract void unfinished(); }"
+    },
+    "correct": "c"
+  },
+  {
+    "question": "Which of the following declares an abstract method in an abstract Java class?",
+    "answers": {
+      "a": "public abstract method();",
+      "b": "public abstract void method();",
+      "c": "public abstract void method() {}",
+      "d": "public void method() {}"
+    },
+    "correct": "b"
+  },
+  {
+    "question": "Which of the following is a correct interface?",
+    "answers": {
+      "a": "interface A { void print() { }; }",
+      "b": "abstract interface A { print(); }",
+      "c": "abstract interface A { abstract void print() { };}",
+      "d": "interface A { void print();}"
+    },
+    "correct": "d"
+  },
+  {
+    "question": "Which of the following is FALSE about abstract classes in Java",
+    "answers": {
+      "a": "If we derive an abstract class and do not implement all the abstract methods, then the derived class should also be marked as abstract using 'abstract' keyword",
+      "b": "Abstract classes can have constructors",
+      "c": "A class can be made abstract without any abstract method",
+      "d": "A class can inherit from multiple abstract classes."
+    },
+    "correct": "d"
+  },
+  {
+    "question": "Which of the following is FALSE about arrays on Java",
+    "answers": {
+      "a": "A java array is always an object",
+      "b": "Length of array can be changed after creation of array",
+      "c": "Arrays in Java are always allocated on heap"
+    },
+    "correct": "b"
+  },
+  {
+    "question": "In Java, when we implement an interface method, it must be declared as:",
+    "answers": {
+      "a": "Private",
+      "b": "Protected",
+      "c": "Public",
+      "d": "Friend"
+    },
+    "correct": "c"
+  }
+]

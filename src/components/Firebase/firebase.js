@@ -17,8 +17,18 @@ class Firebase {
     this.db = app.firestore();
   }
 
-  addCard = () => this.db.collection('multiCards');
-  getCards = () => this.db.collection('multiCards');
+  addCard = (card) => this.db.collection('multiCards').add(card);
+  getCards = (lang) =>
+    this.db
+      .collection('cardCollection')
+      .doc(lang)
+      .collection('multipleAnswers');
+  addMultipleAnswersCard = (card, lang) =>
+    this.db
+      .collection('cardCollection')
+      .doc(lang)
+      .collection('multipleAnswers')
+      .add(card);
 }
 
 export default Firebase;

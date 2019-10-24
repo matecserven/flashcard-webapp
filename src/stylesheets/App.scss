@@ -1,9 +1,14 @@
+
+$title-color: white;
+$layout-bgcolor: #282c34;
+$column-gap: 3rem;
+
 .App {
   text-align: center;
 }
 
 .homePage {
-  background-color: #282c34;
+  background-color: $layout-bgcolor;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,7 +18,18 @@
   color: white;
 }
 
-$title-color: white;
+.layout {
+  background-color: $layout-bgcolor;
+  min-height: 100vh;
+  color: white;
+}
+
+.uploadHider {
+  height: 0px;
+  width: 0px;
+  overflow:hidden;
+}
+
 
 /* @import "bulma/sass/utilities/_all.sass";
 @import "bulma/sass/elements/button.sass";

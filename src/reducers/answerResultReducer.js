@@ -1,9 +1,9 @@
-export default function answerResult(
+const answerResult = (
   state = {
     chosenAnswer: '',
   },
   action,
-) {
+) => {
   switch (action.type) {
     case 'UPDATE_CHOSEN_ANSWER': {
       return {
@@ -15,4 +15,6 @@ export default function answerResult(
     default:
       return state;
   }
-}
+};
+
+export default answerResult;

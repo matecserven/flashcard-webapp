@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react';
-import MultiAnswersPageCont from '../containers/MultiAnswersPageCont';
-import ResultCont from '../containers/ResultCont';
-import FooterNav from './Navigation/FooterNav';
-import { getCardsThunk } from '../thunks/thunks';
-import { randomCard } from '../utils/randomizer';
+import MultiAnswersPageCont from 'containers/MultiAnswersPageCont';
+import ResultCont from 'containers/ResultCont';
+import FooterNav from 'components/Navigation/FooterNav';
+import { randomCard } from 'utils/randomizer';
+import { isEmpty } from 'lodash';
+import 'stylesheets/loader.scss';
 
 const MultiTileSet = (props) => {
   useEffect(() => {
-    const fetchData = async () => {
-      await getCardsThunk(props.firebase);
-    };
-    fetchData();
+    isEmpty(props.cards) && props.getCardsThunk(props.firebase);
   }, []);
 
   const handleClick = () => {
@@ -24,7 +22,15 @@ const MultiTileSet = (props) => {
     <div className='homePage'>
       <ResultCont />
       {!props.currentQuestion ? (
-        <div>Loading...</div>
+        <div>
+          Loading...
+          <div className='lds-ring'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       ) : (
         <MultiAnswersPageCont current={props.currentQuestion} />
       )}

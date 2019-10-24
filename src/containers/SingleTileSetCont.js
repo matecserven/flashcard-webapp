@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import SingleTileSet from '../components/SingleTileSet/SingleTileSet';
-import { updateCurrentQuestion } from '../actions/actions';
+import SingleTileSet from 'components/SingleTileSet/SingleTileSet';
+import { updateCurrentQuestion } from 'actions/actions';
 
 const mapStateToProps = (store) => {
   const { currentQuestion } = store.question;
