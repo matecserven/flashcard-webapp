@@ -1,11 +1,10 @@
 import React from 'react';
 import CardTile from './CardTile';
 import AnswerTile from './AnswerTile';
-import jsonData from '../../assets/javaCardsMulti.json';
 import '../../stylesheets/TileSet.css';
 
 const MultiAnswersPage = (props) => {
-  const { question, correct, answer } = jsonData[props.current];
+  const { question, correct, answers } = props.cards[props.current];
 
   const handleClick = (e) => {
     if (!props.chosenAnswer) {
@@ -30,7 +29,7 @@ const MultiAnswersPage = (props) => {
     }
   };
 
-  const answerOptions = Object.entries(answer).map((entry) => {
+  const answerOptions = Object.entries(answers).map((entry) => {
     return (
       <AnswerTile
         key={entry[0]}

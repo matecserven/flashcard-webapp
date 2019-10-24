@@ -18,6 +18,7 @@ class Firebase {
   }
 
   addCard = () => this.db.collection('multiCards');
+  getCards = () => this.db.collection('multiCards');
 }
 
 export default Firebase;

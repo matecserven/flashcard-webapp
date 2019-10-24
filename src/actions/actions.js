@@ -8,10 +8,15 @@ export const updateInCorrect = () => ({
 
 export const updateChosenAnswer = (payload) => ({
   type: 'UPDATE_CHOSEN_ANSWER',
-  payload
+  payload,
 });
 
 export const updateCurrentQuestion = (payload) => ({
   type: 'UPDATE_CURRENT_QUESTION',
-  payload
+  payload,
+});
+
+export const getCards = (payload) => ({
+  type: 'GET_CARDS',
+  payload,
 });

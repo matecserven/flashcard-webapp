@@ -1,6 +1,7 @@
-export default function question(
+export default function questions(
   state = {
-    currentQuestion: 1,
+    cards: {},
+    currentQuestion: null,
   },
   action,
 ) {
@@ -9,6 +10,13 @@ export default function question(
       return {
         ...state,
         currentQuestion: action.payload,
+      };
+    }
+
+    case 'GET_CARDS': {
+      return {
+        ...state,
+        cards: action.payload,
       };
     }
 
