@@ -21,12 +21,26 @@ const CardCreatorForm = ({ firebase }) => {
 
   const submitForm = (event) => {
     event.preventDefault();
-    console.log(question, answers, correct);
-    firebase.addCard({
-      question,
-      answers,
-      correct,
-    });
+    if (answers.length > 1) {
+      firebase.addCard(
+        {
+          question,
+          answers,
+          correct,
+        },
+        'java',
+        'multipleAnswers',
+      );
+    } else {
+      firebase.addCard(
+        {
+          question,
+          answer: answers[0],
+        },
+        'java',
+        'singleAnswer',
+      );
+    }
   };
 
   const appendAnswers = (amount) => {

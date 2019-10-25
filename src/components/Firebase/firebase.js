@@ -10,6 +10,10 @@ const config = {
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
 
+const CARD_COLLECTION = 'cardCollection';
+const MULTIPLE_ANSWERS = 'multipleAnswers';
+const SINGLE_ANSWER = 'singleAnswer';
+
 class Firebase {
   constructor() {
     app.initializeApp(config);
@@ -17,18 +21,32 @@ class Firebase {
     this.db = app.firestore();
   }
 
-  addCard = (card) => this.db.collection('multiCards').add(card);
   getCards = (lang) =>
     this.db
-      .collection('cardCollection')
+      .collection(CARD_COLLECTION)
       .doc(lang)
-      .collection('multipleAnswers');
-  addMultipleAnswersCard = (card, lang) =>
-    this.db
-      .collection('cardCollection')
+      .collection(MULTIPLE_ANSWERS)
+      .get();
+
+  addCard = (card, lang, type) => {
+    let newCard = {};
+    // eslint-disable-next-line
+    for (let [key, value] of Object.entries(card)) {
+      newCard[key] = value;
+    }
+
+    return this.db
+      .collection(CARD_COLLECTION)
       .doc(lang)
-      .collection('multipleAnswers')
-      .add(card);
+      .collection(type)
+      .add(newCard);
+  };
+
+  createNewCards = (cards, lang, type) => {
+    Promise.all(cards.map((card) => this.addCard(card, lang, type)))
+      .then(() => console.log('success'))
+      .catch((e) => console.log(e));
+  };
 }
 
 export default Firebase;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import FooterNav from 'components/Navigation/FooterNav';
 import SingleAnswerPage from './SingleAnswerPage';
-import jsonData from 'assets/javaCardsRegular.json';
 import { randomCard } from 'utils/randomizer';
 
 const SingleTileSet = (props) => {
@@ -19,7 +18,7 @@ const SingleTileSet = (props) => {
   return (
     <div className='homePage'>
       <SingleAnswerPage
-        question={jsonData[props.currentQuestion]}
+        //question={jsonData[props.currentQuestion]}
         showAnswer={showAnswer}
         onClick={handleAnswerClick}
       />
