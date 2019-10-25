@@ -20,6 +20,13 @@ export default (
       };
     }
 
+    case 'GET_CARDS_FAILED': {
+      return {
+        ...state,
+        error: action.error,
+      };
+    }
+
     default:
       return state;
   }

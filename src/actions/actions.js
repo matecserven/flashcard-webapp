@@ -20,3 +20,8 @@ export const getCards = (payload) => ({
   type: 'GET_CARDS',
   payload,
 });
+
+export const getCardsFailed = (error) => ({
+  type: 'GET_CARDS_FAILED',
+  error,
+});

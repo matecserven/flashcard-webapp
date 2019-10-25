@@ -21,11 +21,11 @@ class Firebase {
     this.db = app.firestore();
   }
 
-  getCards = (lang) =>
+  getCards = (lang, type) =>
     this.db
       .collection(CARD_COLLECTION)
       .doc(lang)
-      .collection(MULTIPLE_ANSWERS)
+      .collection(type)
       .get();
 
   addCard = (card, lang, type) => {
