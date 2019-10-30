@@ -1,33 +1,30 @@
-export default (
-  state = {
-    cards: {},
-    currentQuestion: null,
-  },
-  action,
-) => {
-  switch (action.type) {
-    case 'UPDATE_CURRENT_QUESTION': {
+import switchCaseFunc from 'utils/switchcase';
+
+const initalState = {
+  cards: {},
+  currentQuestion: null,
+};
+
+const questions = (state = initalState, action) =>
+  switchCaseFunc({
+    UPDATE_CURRENT_QUESTION: () => {
       return {
         ...state,
         currentQuestion: action.payload,
       };
-    }
-
-    case 'GET_CARDS': {
+    },
+    GET_CARDS: () => {
       return {
         ...state,
         cards: action.payload,
       };
-    }
-
-    case 'GET_CARDS_FAILED': {
+    },
+    GET_CARDS_FAILED: () => {
       return {
         ...state,
         error: action.error,
       };
-    }
+    },
+  })(state)(action.type);
 
-    default:
-      return state;
-  }
-};
+export default questions;

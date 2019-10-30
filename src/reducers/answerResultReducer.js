@@ -1,20 +1,17 @@
-const answerResult = (
-  state = {
-    chosenAnswer: '',
-  },
-  action,
-) => {
-  switch (action.type) {
-    case 'UPDATE_CHOSEN_ANSWER': {
+import switchCaseFunc from 'utils/switchcase';
+
+const initalState = {
+  chosenAnswer: '',
+};
+
+const answerResult = (state = initalState, action) =>
+  switchCaseFunc({
+    UPDATE_CHOSEN_ANSWER: () => {
       return {
         ...state,
         chosenAnswer: action.payload,
       };
-    }
-
-    default:
-      return state;
-  }
-};
+    },
+  })(state)(action.type);
 
 export default answerResult;
