@@ -9,11 +9,9 @@ const MultiAnswersPage = (props) => {
   const handleClick = (e) => {
     if (!props.chosenAnswer) {
       props.updateChosenAnswer(e.target.value);
-      if (correct === e.target.value) {
-        props.updateCorrect();
-      } else {
-        props.updateInCorrect();
-      }
+      correct === e.target.value
+        ? props.updateCorrect()
+        : props.updateInCorrect();
     }
   };
 

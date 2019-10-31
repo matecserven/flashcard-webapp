@@ -11,8 +11,6 @@ const config = {
 };
 
 const CARD_COLLECTION = 'cardCollection';
-const MULTIPLE_ANSWERS = 'multipleAnswers';
-const SINGLE_ANSWER = 'singleAnswer';
 
 class Firebase {
   constructor() {

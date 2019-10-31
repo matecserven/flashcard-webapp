@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import HomePage from './HomePage/HomePage';
+import HomePage from 'components/HomePage/HomePage';
 import SingleTileSetCont from 'containers/SingleTileSetCont';
 import MultiTileSetCont from 'containers/MultiTileSetCont';
 import CardCreatorLayout from 'components/CardCreatorPage/CardCreatorLayout';

@@ -4,29 +4,35 @@ import { withFirebase } from 'components/Firebase';
 import { take } from 'lodash';
 
 const CardCreatorForm = ({ firebase }) => {
-  const [question, setQuestion] = useState();
-  const [answers, setAnswers] = useState({});
-  const [correct, setCorrect] = useState();
+  const [card, setCard] = useState({});
 
   const handleQuestionChange = (event) => {
-    setQuestion(event.target.value);
+    setCard({ ...card, question: event.target.value });
   };
+
   const handleAnswerChange = (event) => {
-    setAnswers({ ...answers, [event.target.name]: event.target.value });
+    setCard({
+      ...card,
+      answers: {
+        ...card.answers,
+        [event.target.name]: event.target.value,
+      },
+    });
+    console.log(card);
   };
 
   const handleOptionChange = (event) => {
-    setCorrect(event.target.value);
+    setCard({ ...card, correct: event.target.value });
   };
 
   const submitForm = (event) => {
     event.preventDefault();
-    if (answers.length > 1) {
+    if (Object.keys(card.answers).length > 1) {
       firebase.addCard(
         {
-          question,
-          answers,
-          correct,
+          question: card.question,
+          asnwers: card.answers,
+          correct: card.correct,
         },
         'java',
         'multipleAnswers',
@@ -34,8 +40,8 @@ const CardCreatorForm = ({ firebase }) => {
     } else {
       firebase.addCard(
         {
-          question,
-          answer: answers[0],
+          question: card.question,
+          answer: card.answers['a'],
         },
         'java',
         'singleAnswer',
@@ -49,7 +55,7 @@ const CardCreatorForm = ({ firebase }) => {
       <CardAnswer
         key={letter}
         letter={letter}
-        correct={correct}
+        correct={card.correct}
         handleAnswerChange={handleAnswerChange}
         handleOptionChange={handleOptionChange}
       />
