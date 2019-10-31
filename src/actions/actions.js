@@ -16,9 +16,10 @@ export const updateCurrentQuestion = (payload) => ({
   payload,
 });
 
-export const getCards = (payload) => ({
+export const getCards = (payload, cardType) => ({
   type: 'GET_CARDS',
   payload,
+  cardType,
 });
 
 export const getCardsFailed = (error) => ({

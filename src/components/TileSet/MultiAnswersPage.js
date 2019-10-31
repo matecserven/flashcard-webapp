@@ -4,7 +4,7 @@ import AnswerTile from './AnswerTile';
 import 'stylesheets/TileSet.css';
 
 const MultiAnswersPage = (props) => {
-  const { question, correct, answers } = props.cards[props.current];
+  const { question, correct, answers } = props.multipleAnswers[props.current];
 
   const handleClick = (e) => {
     if (!props.chosenAnswer) {

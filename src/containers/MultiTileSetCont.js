@@ -5,9 +5,9 @@ import { withFirebase } from 'components/Firebase';
 import { getCardsThunk } from 'thunks/thunks';
 
 const mapStateToProps = (store) => {
-  const { currentQuestion, cards } = store.questions;
+  const { currentQuestion, multipleAnswers } = store.cards;
   return {
-    cards,
+    multipleAnswers,
     currentQuestion,
   };
 };

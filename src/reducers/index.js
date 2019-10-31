@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import score from 'reducers/scoreReducer';
 import answerResult from 'reducers/answerResultReducer';
-import questions from 'reducers/questionReducer';
+import cards from 'reducers/cardsReducer';
 
 const rootReducer = combineReducers({
   score,
   answerResult,
-  questions,
+  cards,
 });
 
 export default rootReducer;

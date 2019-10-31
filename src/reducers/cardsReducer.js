@@ -1,11 +1,12 @@
 import switchCaseFunc from 'utils/switchcase';
 
 const initalState = {
-  cards: {},
+  multipleAnswers: {},
+  singleAnswer: {},
   currentQuestion: null,
 };
 
-const questions = (state = initalState, action) =>
+const cards = (state = initalState, action) =>
   switchCaseFunc({
     UPDATE_CURRENT_QUESTION: () => {
       return {
@@ -16,7 +17,7 @@ const questions = (state = initalState, action) =>
     GET_CARDS: () => {
       return {
         ...state,
-        cards: action.payload,
+        [action.cardType]: action.payload,
       };
     },
     GET_CARDS_FAILED: () => {
@@ -27,4 +28,4 @@ const questions = (state = initalState, action) =>
     },
   })(state)(action.type);
 
-export default questions;
+export default cards;

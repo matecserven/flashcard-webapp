@@ -9,9 +9,9 @@ import MultiAnswersPage from 'components/TileSet/MultiAnswersPage';
 const mapStateToProps = (store) => {
   const { correct, incorrect } = store.score;
   const { chosenAnswer } = store.answerResult;
-  const { cards } = store.questions;
+  const { multipleAnswers } = store.cards;
   return {
-    cards,
+    multipleAnswers,
     correct,
     incorrect,
     chosenAnswer,
