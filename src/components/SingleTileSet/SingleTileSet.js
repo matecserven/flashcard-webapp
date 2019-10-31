@@ -3,7 +3,7 @@ import FooterNav from 'components/Navigation/FooterNav';
 import SingleAnswerPage from './SingleAnswerPage';
 import { randomCard } from 'utils/randomizer';
 import { isEmpty } from 'lodash';
-import LoadingAnimation from 'components/LoadingAnimation';
+import LoadingAnimation from 'components/TileSet/LoadingAnimation';
 
 const SingleTileSet = (props) => {
   const [showAnswer, setShowAnswer] = useState(false);

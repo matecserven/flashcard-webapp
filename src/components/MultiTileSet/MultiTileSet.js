@@ -4,7 +4,7 @@ import ResultCont from 'containers/ResultCont';
 import FooterNav from 'components/Navigation/FooterNav';
 import { randomCard } from 'utils/randomizer';
 import { isEmpty } from 'lodash';
-import LoadingAnimation from 'components/LoadingAnimation';
+import LoadingAnimation from 'components/TileSet/LoadingAnimation';
 
 const MultiTileSet = (props) => {
   const {
@@ -41,7 +41,7 @@ const MultiTileSet = (props) => {
       {!Object.keys(multipleAnswers).includes(currentQuestion) ? (
         <LoadingAnimation />
       ) : (
-        <MultiAnswersPageCont current={currentQuestion} />
+        <MultiAnswersPageCont card={multipleAnswers[currentQuestion]} />
       )}
       <FooterNav onClick={handleClick} />
     </div>
