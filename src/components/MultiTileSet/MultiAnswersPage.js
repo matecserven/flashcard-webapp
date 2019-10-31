@@ -1,19 +1,17 @@
 import React from 'react';
-import CardTile from './CardTile';
-import AnswerTile from './AnswerTile';
+import CardTile from 'components/TileSet/CardTile';
+import AnswerTile from 'components/TileSet/AnswerTile';
 import 'stylesheets/TileSet.css';
 
 const MultiAnswersPage = (props) => {
-  const { question, correct, answers } = props.cards[props.current];
+  const { question, correct, answers } = props.card;
 
   const handleClick = (e) => {
     if (!props.chosenAnswer) {
       props.updateChosenAnswer(e.target.value);
-      if (correct === e.target.value) {
-        props.updateCorrect();
-      } else {
-        props.updateInCorrect();
-      }
+      correct === e.target.value
+        ? props.updateCorrect()
+        : props.updateInCorrect();
     }
   };
 

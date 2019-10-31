@@ -1,5 +1,5 @@
 import React from 'react';
-import Score from 'components/Results/Score';
+import Score from './Score';
 
 const ResultPage = ({ correct, incorrect }) => (
   <div>

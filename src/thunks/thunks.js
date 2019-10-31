@@ -1,10 +1,18 @@
-import { getCards, updateCurrentQuestion } from 'actions/actions';
+import {
+  getCards,
+  updateCurrentQuestion,
+  getCardsFailed,
+} from 'actions/actions';
 import { randomCard } from 'utils/randomizer';
 
-export const getCardsThunk = (firebase) => async (dispatch) => {
-  let data = await firebase.getCards('Java').get();
+export const getCardsThunk = (firebase, lang, type) => async (dispatch) => {
   let dataObj = {};
-  data.docs.forEach((card) => (dataObj[card.id] = card.data()));
-  dispatch(getCards(dataObj));
-  dispatch(updateCurrentQuestion(randomCard(null, Object.keys(dataObj))));
+  try {
+    let data = await firebase.getCards(lang, type);
+    data.docs.forEach((card) => (dataObj[card.id] = card.data()));
+    dispatch(getCards(dataObj, type));
+    dispatch(updateCurrentQuestion(randomCard(null, Object.keys(dataObj))));
+  } catch (error) {
+    dispatch(getCardsFailed(error));
+  }
 };

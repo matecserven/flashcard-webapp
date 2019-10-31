@@ -4,14 +4,12 @@ import {
   updateInCorrect,
   updateChosenAnswer,
 } from 'actions/actions';
-import MultiAnswersPage from 'components/TileSet/MultiAnswersPage';
+import MultiAnswersPage from 'components/MultiTileSet/MultiAnswersPage';
 
 const mapStateToProps = (store) => {
   const { correct, incorrect } = store.score;
   const { chosenAnswer } = store.answerResult;
-  const { cards } = store.questions;
   return {
-    cards,
     correct,
     incorrect,
     chosenAnswer,

@@ -1,10 +1,10 @@
 import React from 'react';
 import CardTile from 'components/TileSet/CardTile';
 
-const SingleAnswerPage = ({ question, showAnswer, onClick }) => (
+const SingleAnswerPage = ({ card, showAnswer, onClick }) => (
   <div onClick={onClick}>
-    <CardTile question={question.q} />
-    {showAnswer ? question.a : ''}
+    <CardTile question={card.question} />
+    {showAnswer ? card.answer : ''}
   </div>
 );
 
